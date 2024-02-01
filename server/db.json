@@ -1,0 +1,18 @@
+{
+  "travels": [
+    {
+      "id": "1",
+      "city": "Diamantina",
+      "country": "Brazil",
+      "date": "06012024",
+      "stars": 1
+    },
+    {
+      "id": "2",
+      "city": "Brumadinho",
+      "country": "Brazil",
+      "date": "06012024",
+      "stars": 1
+    }
+  ]
+}
