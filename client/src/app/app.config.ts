@@ -1,22 +1,9 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { pt_BR, provideNzI18n } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
-import pt from '@angular/common/locales/pt';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { provideAnimations } from '@angular/platform-browser/animations';
-
-registerLocaleData(pt);
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideRouter(routes),
-    provideNzI18n(pt_BR),
-    importProvidersFrom(FormsModule),
-    importProvidersFrom(HttpClientModule),
-    provideAnimations(),
-  ],
+  providers: [provideRouter(routes), provideAnimationsAsync()]
 };
