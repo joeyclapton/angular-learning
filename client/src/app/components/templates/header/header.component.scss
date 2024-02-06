@@ -1,8 +1,10 @@
 .header {
   display: flex;
   justify-content: center;
+
   .logo {
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 }
