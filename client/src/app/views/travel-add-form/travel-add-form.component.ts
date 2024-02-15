@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrl: './travel-add-form.component.scss',
 })
 export class TravelAddFormComponent {
+  showMessage = false;
+
   constructor(private router: Router) {}
 
   onNavigateToTravelCreate() {
