@@ -1,11 +1,19 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from '../../../../environments/environment';
+import { Travel } from '../../models/travel.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TravelService {
-  constructor(private snackBar: MatSnackBar) {}
+  snackBar = inject(MatSnackBar);
+  http = inject(HttpClient);
+  baseUrl = environment.baseUrl;
+
+  constructor() {}
 
   showMessage(msg: string) {
     this.snackBar.open(msg, 'Fechar', {
@@ -13,5 +21,9 @@ export class TravelService {
       horizontalPosition: 'right',
       verticalPosition: 'top',
     });
+  }
+
+  create(travel: Travel): Observable<Travel> {
+    return this.http.post<Travel>(this.baseUrl, travel);
   }
 }
