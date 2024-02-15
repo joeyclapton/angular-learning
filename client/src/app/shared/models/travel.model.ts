@@ -3,5 +3,5 @@ export interface Travel {
   city: string;
   country: string;
   date: Date;
-  stars?: string;
+  stars?: number;
 }
