@@ -1,2 +1,46 @@
-<button mat-raised-button (click)="onCreateTravel()">Criar viagem 🧸</button>
-<button mat-raised-button (click)="onCancel()">Voltar 🐈‍⬛</button>
+<mat-card>
+  <mat-card-title> Nova viagem 📌 </mat-card-title>
+  <form class="form">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Cidade"
+        [(ngModel)]="travel.city"
+        name="city"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="País"
+        [(ngModel)]="travel.country"
+        name="country"
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Data</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [(ngModel)]="travel.date"
+        name="date"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Estrelas"
+        [(ngModel)]="travel.stars"
+        name="stars"
+      />
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="onCreateTravel()">Criar viagem 🧸</button>
+  <button mat-raised-button (click)="onCancel()">Voltar 🐈‍⬛</button>
+</mat-card>
