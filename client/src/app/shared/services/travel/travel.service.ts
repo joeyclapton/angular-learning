@@ -26,4 +26,8 @@ export class TravelService {
   create(travel: Travel): Observable<Travel> {
     return this.http.post<Travel>(`${this.baseUrl}/travels`, travel);
   }
+
+  getAll(): Observable<Array<Travel>> {
+    return this.http.get<Array<Travel>>(`${this.baseUrl}`);
+  }
 }
