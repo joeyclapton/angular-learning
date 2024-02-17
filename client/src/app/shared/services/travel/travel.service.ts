@@ -28,6 +28,6 @@ export class TravelService {
   }
 
   getAll(): Observable<Array<Travel>> {
-    return this.http.get<Array<Travel>>(`${this.baseUrl}`);
+    return this.http.get<Array<Travel>>(`${this.baseUrl}/travels`);
   }
 }
